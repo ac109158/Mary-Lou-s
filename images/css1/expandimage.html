@@ -1,0 +1,37 @@
+<html>
+<head>
+<style type="text/css"> 
+    .growImage {position:relative;width:50%;left:50px;top:50px}
+    .growDiv { left: 100px; top: 150x;width:150px;height:150px;position:relative }
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+</head>
+<body> 
+<div class="growDiv"> 
+      <img class="growImage" src="1B.png" width="400px"; onmouseover="this.src='1A.png';" onmouseout="this.src='1B.png';" alt="my image"> 
+</div>
+
+<div class="growDiv"> 
+      <img class="growImage" src="2B.png" width="400px"; onmouseover="this.src='2A.png';" onmouseout="this.src='2B.png';" alt="my image"> 
+</div>
+
+<div class="growDiv"> 
+      <img class="growImage" src="3B.png" width="400px"; onmouseover="this.src='3A.png';" onmouseout="this.src='3B.png';" alt="my image"> 
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $('.growImage').mouseover(function(){
+      //moving the div left a bit is completely optional
+      //but should have the effect of growing the image from the middle.
+      $(this).stop().animate({"width": "150%","left":"0px","top":"0px"}, 400,'swing');
+    }).mouseout(function(){ 
+      $(this).stop().animate({"width": "50%","left":"50px","top":"50px"}, 200,'swing');
+    });;
+});
+</script>
+</body></html>
